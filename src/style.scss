@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Dancing+Script:wght@600&family=Prata&family=Quicksand:wght@600&display=swap');
+*{
+  box-sizing: border-box;
+}
+body, html{
+  padding: 0;
+  margin: 0;
+  font-family: 'Baskervville', serif;
+  font-size: 14px;
+}
+body{
+  overflow-y: hidden;
+}
+.btn{
+  padding: 10px 15px;
+  border-radius: 100px;
+  border: 2px solid black;
+  outline: none;
+  cursor: pointer;
+  animation: zoom 2s infinite;
+  text-transform: uppercase;
+  &:hover{
+    transition: 0.3s;
+    background: black;
+    color: white;
+    letter-spacing: 1px;
+  }
+}
+.container{
+  max-width: 1140px;
+  margin: auto;
+}
+.mb-5{
+  margin-bottom: 50px;
+}
+.speaker{
+  position: fixed;
+  z-index: 9999;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+  img{
+    width: 50px;
+    border-radius: 100%;
+    border: 5px solid black;
+  }
+}
+.section-1{
+  width: 100%;
+  height: 100vh;
+  background: url('https://i.imgur.com/GAYZGaz.jpg') center center / cover no-repeat;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  .ornamen{
+    position: absolute;
+    width: 40%;
+  }
+  .ornamen-top{
+   top: -50px;
+   left: -10px;
+   transform: rotate(45deg);
+  }
+  .ornamen-bottom{
+    bottom: 0;
+    right: -50px;
+    transform: rotate(270deg);
+  }
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    .name-bride{
+      font-family: 'Dancing Script', cursive;
+      font-size: 50px;
+    }
+    div{
+      margin: 10px 0;
+    }
+  }
+}
+.section-2{
+  .content{
+    padding: 20px;
+    display: flex;
+    .left{
+      width: 50%;
+      position: relative;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      .ornamen{
+        width: 200px;
+        height: auto;
+        right: -50px;
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+    .right{
+      width: 50%;
+      padding: 50px 20px;
+      text-align: center;
+      .caption{
+        .title{
+          font-size: 40px;
+        }
+        .author{
+          font-weight: bold;
+          font-size:16px;
+        }
+      }
+    }
+  }
+}
+.section-3{
+  .content{
+    .bg-img{
+      width: 100%;
+      img{
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+  }
+}
+.section-4{
+  .content{
+    display: flex;
+    .sub-content{
+      width: 50%;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+      img{
+        width:200px;
+        height: 200px;
+        border-radius: 100%;
+        border: 10px solid black;
+        position: absolute;
+        top: -35%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .nickname{
+        margin-top: 100px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .name{
+        font-size: 20px;
+      }
+      hr{
+        width: 10%;
+      }
+      .sosmed{
+        padding: 10px 11px;
+        background: black;
+        color: white;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+.section-5{
+  width: 100%;
+  height: 100vh;
+  background: url('https://i.imgur.com/GAYZGaz.jpg') center center / cover no-repeat;
+  padding: 20px;
+  .content{
+    background: black;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    .title{
+      font-size: 30px;
+      margin: 50px 0 10px 0;
+    }
+    hr{
+      width: 20%;
+    }
+    .btn{
+      &:hover{
+        background: white;
+        color: black;
+        font-weight: bold;
+      }
+    }
+    .save-the-date{
+       display: flex;
+       margin: 10px 0;
+       .time{
+         width: 22%;
+         margin: 2%;
+         border: 2px solid white;
+         border-radius: 0 10px 0 10px;
+         .value-time{
+           font-size: 25px;
+           padding: 5px;
+         }
+         .sub-time{
+           background: white;
+           color: black;
+           padding: 5px;
+           border-radius: 0 0 0 8px;
+         }
+       }
+     }
+  }
+}
+.section-6{
+  .content{
+    display: flex;
+    .sub-content{
+      width: 50%;
+      padding: 20px;
+      background: #ddd;
+      .title{
+        font-size: 50px;
+      }
+      img{
+        width: 100%;
+        margin: 20px 0;
+      }
+      .hastag{
+        font-size: 30px;
+        text-align: center;
+        .ornamen{
+          width: 100px;
+          margin: 0;
+        }
+      }
+      
+    }
+    .mr-1{
+      margin-right: 10px;
+    }
+    .ml-1{
+      margin-left: 10px;
+    }
+  }
+}
+.section-7{
+  .content{
+    border: 5px solid black;
+    iframe{
+      width: 100%;
+      min-height: 52vh;
+    }
+  }
+}
+.section-8{
+  .content{
+    .slide-bride{
+        img{
+          width: 100%;
+        }
+        .slick-arrow{
+          position:  absolute;
+          
+        }
+        .slick-prev{
+          left: 20px;
+          z-index: 98;
+        }
+        .slick-next{
+          right: 20px;
+          z-index: 98;
+        }
+      }
+  }
+}
+.section-9 .content #animated-thumbnails{
+    display: flex;
+    /* flex-wrap: wrap;
+    row-gap: 10px; */
+    grid-column-gap: 10px;
+}
+.section-9 .content #animated-thumbnails a{
+    width: 20%;
+}
+.section-9 .content #animated-thumbnails a img{
+    width: 100%;
+}
+.section-10 {
+    width: 100%;
+    background: url('https://i.imgur.com/GAYZGaz.jpg') center center / cover no-repeat;
+    padding: 20px;
+}
+.section-10 .content{
+    display: flex;
+    background: black;
+    opacity: 0.5;
+    color: white;
+}
+.section-10 .content .sub-content{
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+.section-10 .content .sub-content .title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.section-10 .content .sub-content .box-chat{
+    background: white;
+    padding: 20px;
+    height: 50vh;
+    overflow-y: scroll;
+    border-radius: 10px 0 0 10px;
+    color: black;
+}
+.section-10 .content .sub-content .box-chat .item-chat{
+    display: flex; 
+    margin: 7px 0;
+    text-align: left;
+}
+.section-10 .content .sub-content .box-chat .item-chat .name{
+    width: 20%;
+    font-size: 16px;
+    font-weight: bold;
+}
+.section-10 .content .sub-content .box-chat .item-chat .message{
+    width: 80%;
+}
+form .group {
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+}
+form .group input, form .group textarea {
+    padding: 10px;
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 2px solid white;
+    color: black;
+    background: #f4f4f4;
+}
+form .group input:focus, form .group textarea:focus {
+    outline: 0;
+}
+form .group .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+form .group .bar:before, form .group .bar:after {
+    content: '';
+    height: 3px;
+    bottom: 1px;
+    position: absolute;
+    background: black;
+    transition: all 0.3s ease;
+    width: 0;
+}
+form .group .bar:before {
+    left: 50%;
+}
+form .group .bar:after {
+    right: 50%;
+}
+form .group textarea{ resize: none;}
+form .group input:focus ~ .bar:before, form .group input:focus ~ .bar:after, form .group textarea:focus ~ .bar:before, form .group textarea:focus ~ .bar:after {
+    width: 50%;
+}
+form .group .btn {
+    width: 95%;
+    background: black;
+    border: 2px solid #f4f4f4;
+    transition: all 0.4s ease;
+    color: white;
+    cursor: pointer;
+}
+form .group .btn:focus {
+    outline: none;
+}
+form .group .btn:hover {
+    background: #f4f4f4;
+    color: black;
+}
+.section-11{
+  .content{
+    padding: 50px;
+    .title{
+      font-size: 30px;
+      text-align: center;
+    }
+    .info{
+      display: flex;
+      flex-wrap: wrap;
+      .item{
+        width: 50%;
+        display: flex;
+        padding: 10px;
+        img{
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+.section-12{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://i.imgur.com/GAYZGaz.jpg') center center / cover no-repeat;
+  background-attachment: fixed;
+  .content{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 50%;
+    .name-bride{
+      font-size: 50px;
+    }
+  }
+}
+.footer{
+  .content{
+    text-align: center;
+    padding: 20px;
+    .sosmed{
+      div{
+        background: black;
+        color: white;
+        border-radius: 100%;
+        display: inline-block;
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+      }
+      a{ text-decoration: none; color: white;}
+      .fab{
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+@-webkit-keyframes zoom {
+    0% {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50%{
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+  100%{
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+    0% {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50%{
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+  100%{
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+  }
+}

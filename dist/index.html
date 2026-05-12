@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="Undangan Pernikahan Digital Zaenul & Ardila">
+  <meta name="theme-color" content="#f5efe7">
+  <title>Undangan Pernikahan | Zaenul & Ardila</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.2.0-beta.0/css/lightgallery.min.css'>
+  <style>
+    /* =============== CUSTOM FONT BIDENATRIAL =============== */
+    @font-face {
+      font-family: 'Bidenatrial';
+      src: url('https://assets.codepen.io/167040/Bidenatrial.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* RESET PROFESIONAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body,
+    html {
+      font-family: 'Bidenatrial', 'Bodoni Moda', 'Didot', 'Georgia', serif;
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: #faf8f4;
+      overflow-x: hidden;
+      color: #2c241a;
+    }
+
+    /* TYPOGRAPHY */
+    .subtitle {
+      font-family: 'Bidenatrial', 'Quicksand', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8b7355;
+      font-weight: 400;
+    }
+
+    /* === FONT KHUSUS NAMA MEMPELAI === */
+    .couple-name,
+    .hero-card .couple-name,
+    .profile-name,
+    .closing-name {
+      font-family: 'Bidenatrial', 'Bodoni Moda', 'Didot', serif !important;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-card .couple-name {
+      font-size: 3.5rem;
+      margin: 16px 0 12px;
+      color: #3e2c1c;
+    }
+
+    .profile-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin: 12px 0 8px;
+    }
+
+    .closing-name {
+      font-size: 2.5rem;
+    }
+
+    /* BUTTON */
+    .btn {
+      padding: 12px 32px;
+      border-radius: 40px;
+      border: 1.5px solid #9b7b5c;
+      background: transparent;
+      font-family: 'Bidenatrial', 'Quicksand', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #2c241a;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-primary {
+      background: #9b7b5c;
+      border-color: #9b7b5c;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #7d6043;
+      border-color: #7d6043;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: #c6b294;
+      color: #5a4a36;
+    }
+
+    .btn-outline:hover {
+      background: #9b7b5c;
+      border-color: #9b7b5c;
+      color: white;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section {
+      margin-bottom: 90px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(rgba(30, 25, 20, 0.35), rgba(30, 25, 20, 0.35)), url("https://i.imgur.com/GAYZGaz.jpg") center center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-card {
+      text-align: center;
+      background: rgba(255, 252, 245, 0.94);
+      backdrop-filter: blur(3px);
+      padding: 48px 56px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      max-width: 560px;
+      width: 88%;
+    }
+
+    .hero-card .wedding-badge {
+      font-family: 'Bidenatrial', 'Quicksand', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #9b7b5c;
+    }
+
+    .hero-card .date {
+      font-family: 'Bidenatrial', serif;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      color: #7f684b;
+    }
+
+    /* ORNAMEN ELEMEN */
+    .floating-ornament {
+      position: absolute;
+      width: 180px;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: transform 0.1s linear;
+    }
+
+    .ornament-top {
+      top: 20px;
+      left: 0;
+    }
+
+    .ornament-bottom {
+      bottom: 20px;
+      right: 0;
+      transform: rotate(180deg);
+    }
+
+    /* COUPLE SECTION */
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .two-columns>div {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    /* PERBAIKAN FOTO: tidak terbalik */
+    .image-frame img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease;
+      display: block;
+      object-fit: cover;
+      image-orientation: from-image;
+    }
+
+    .quote-text {
+      font-style: italic;
+      line-height: 1.7;
+      color: #4a3b2c;
+      font-size: 1.05rem;
+      font-family: 'Bidenatrial', serif;
+    }
+
+    .verse {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      border-left: 3px solid #d4be9b;
+      padding-left: 20px;
+      color: #7f684b;
+    }
+
+    /* BRIDE GROOM CARDS - PERBAIKAN FOTO TIDAK TERBALIK */
+    .profile-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 100px 32px 40px;
+      flex: 1;
+      min-width: 260px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      position: relative;
+      border: 1px solid #ede3d4;
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid #ffffff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f0e7dc;
+      image-orientation: from-image;
+      display: block;
+    }
+
+    .divider-light {
+      width: 50px;
+      height: 1px;
+      background: #d4be9b;
+      margin: 16px auto;
+    }
+
+    /* EVENT CARD */
+    .event-card {
+      background: url("https://i.imgur.com/GAYZGaz.jpg") fixed center/cover;
+      padding: 64px 32px;
+      border-radius: 48px;
+      margin: 0 20px;
+    }
+
+    .event-inner {
+      background: rgba(20, 18, 16, 0.82);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 48px 32px;
+      text-align: center;
+      color: #f2ebe1;
+    }
+
+    .event-detail {
+      margin: 24px 0 16px;
+      font-size: 1.1rem;
+      font-family: 'Bidenatrial', serif;
+    }
+
+    .countdown-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .countdown-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 12px 20px;
+      min-width: 85px;
+      text-align: center;
+    }
+
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: 500;
+      font-family: 'Bidenatrial', monospace;
+      letter-spacing: 2px;
+    }
+
+    /* story grid */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .story-card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 28px;
+      flex: 1;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.03);
+    }
+
+    .story-card img {
+      object-fit: cover;
+      image-orientation: from-image;
+    }
+
+    /* gallery slider - PERBAIKAN FOTO SLIDER */
+    .slick-slide img {
+      border-radius: 28px;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      image-orientation: from-image;
+    }
+
+    /* guestbook */
+    .guestbook-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      background: #2e2822;
+      border-radius: 48px;
+      overflow: hidden;
+    }
+
+    .guestbook-form,
+    .guestbook-messages {
+      flex: 1;
+      padding: 40px 32px;
+    }
+
+    .guestbook-form {
+      background: #f5efe7;
+    }
+
+    .guestbook-messages {
+      background: #faf5ed;
+    }
+
+    .message-list {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      height: 380px;
+      overflow-y: auto;
+    }
+
+    .chat-item {
+      border-bottom: 1px solid #e7dfd3;
+      padding: 14px 0;
+    }
+
+    .chat-name {
+      font-weight: 700;
+      color: #5e4b34;
+      font-family: 'Bidenatrial', sans-serif;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #ddd2c2;
+      border-radius: 32px;
+      background: white;
+      font-family: 'Bidenatrial', serif;
+      margin-bottom: 20px;
+    }
+
+    /* footer */
+    .footer {
+      background: #1e1914;
+      color: #cbbca8;
+      text-align: center;
+      padding: 32px;
+      font-size: 0.85rem;
+    }
+
+    /* music control */
+    .music-control {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(255, 252, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 60px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2cfb3;
+      cursor: pointer;
+      font-family: 'Bidenatrial', 'Quicksand', sans-serif;
+      font-size: 0.8rem;
+    }
+
+    .music-control i {
+      font-size: 1.2rem;
+      color: #9b7b5c;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .hero-card {
+        padding: 32px 24px;
+      }
+
+      .hero-card .couple-name {
+        font-size: 2.4rem;
+      }
+
+      .profile-name {
+        font-size: 1.5rem;
+      }
+
+      .countdown-item {
+        padding: 8px 16px;
+        min-width: 70px;
+      }
+
+      .music-control {
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+
+    /* animasi parallax */
+    .parallax-move {
+      will-change: transform;
+      transition: transform 0.12s linear;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MUSIC AUTO PLAY - Ed Sheeran Perfect -->
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-control" id="musicToggle">
+    <i class="fas fa-music" id="musicIcon"></i>
+    <span id="musicStatus">Perfect - Ed Sheeran</span>
+  </div>
+
+  <!-- HERO SECTION HALAMAN PEMBUKA -->
+  <div class="hero" id="heroSection">
+    <img class="floating-ornament ornament-top parallax-move" data-speed="0.06"
+      src="https://files.catbox.moe/lxy1y7.png" alt="dekorasi">
+    <img class="floating-ornament ornament-bottom parallax-move" data-speed="-0.04"
+      src="https://files.catbox.moe/lxy1y7.png" alt="dekorasi">
+    <div class="hero-card">
+      <div class="wedding-badge">Pernikahan</div>
+      <div class="couple-name">Zaenul & Ardila</div>
+      <div class="date">13 Mei 2026</div>
+      <button class="btn btn-primary" id="openInvitationBtn">Buka Undangan</button>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA UNDANGAN -->
+  <div id="mainInvitation" style="display: none;">
+
+    <!-- Section foto bersama mempelai dan kutipan -->
+    <div class="container section">
+      <div class="two-columns">
+        <div class="image-frame parallax-move" data-speed="0.03">
+          <img src="https://files.catbox.moe/0r3x2h.jpeg" alt="Zaenul dan Ardila bersama">
+        </div>
+        <div class="quote-text">
+          <p class="subtitle">Bersama Selamanya</p>
+          <h2 style="font-size: 2rem; margin: 16px 0; font-family: 'Bidenatrial', serif;">Kami Bersatu</h2>
+          <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri,
+            agar kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.
+            Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+          <div class="verse">— QS. Ar-Rum : 21</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREWEDDING PHOTO -->
+    <div class="container section">
+      <div class="image-frame parallax-move" data-speed="0.02">
+        <img src="https://files.catbox.moe/5d9ygi.jpg"
+          alt="Pre-wedding Zaenul & Ardila"
+          style="border-radius: 48px; width:100%; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); object-fit: cover; image-orientation: from-image;">
+        <p
+          style="text-align: center; margin-top: 24px; font-family: 'Bidenatrial', serif; font-style: italic; color: #9b7b5c; letter-spacing: 1px;">
+          Pre-Wedding | Momen Bahagia Menuju Hari Istimewa</p>
+      </div>
+    </div>
+
+    <!-- Profil Mempelai Pria dan Wanita - FOTO SUDAH DITUKAR SESUAI JENIS KELAMIN -->
+    <div class="container section">
+      <div class="profile-cards">
+        <!-- Mempelai Wanita: Ardila (sebelah kiri) - menggunakan foto q4bcys.jpeg -->
+        <div class="profile-card">
+          <img class="profile-photo parallax-move" data-speed="0.04" src="https://files.catbox.moe/deic2r.jpeg"
+            alt="Foto Ardila">
+          <div class="profile-name">Ardila Pasha</div>
+          <div class="divider-light"></div>
+          <p>Putri dari<br><strong>Bapak Muhammad Rasya Hendrian</strong><br>&<br><strong>Ibu Nurul Alpiani</strong>
+          </p>
+          <i class="fab fa-instagram" style="margin-top: 20px; color: #9b7b5c; font-size: 1.3rem;"></i>
+        </div>
+        <!-- Mempelai Pria: Zaenul (sebelah kanan) - menggunakan foto deic2r.jpeg -->
+        <div class="profile-card">
+          <img class="profile-photo parallax-move" data-speed="-0.02" src="https://files.catbox.moe/q4bcys.jpeg"
+            alt="Foto Zaenul">
+          <div class="profile-name">Zaenul Asikin</div>
+          <div class="divider-light"></div>
+          <p>Putra dari<br><strong>Bapak Habil Hawari</strong><br>&<br><strong>Ibu Siti Rahmawati</strong></p>
+          <i class="fab fa-instagram" style="margin-top: 20px; color: #9b7b5c; font-size: 1.3rem;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail Acara & Countdown -->
+    <div class="event-card section">
+      <div class="event-inner">
+        <h2 style="font-size: 2.2rem; font-weight: 400; font-family: 'Bidenatrial', serif;">Acara Pernikahan</h2>
+        <div class="event-detail">Akad Nikah : 08.00 - 09.15 WIB</div>
+        <div class="event-detail">Resepsi Pernikahan : 09.15 - 10.15 WIB</div>
+        <div class="event-detail">Rabu, 13 Mei 2026</div>
+
+        <!-- TOMBOL LOKASI LANGSUNG KE GOOGLE MAPS -->
+        <button class="btn btn-outline" id="locationBtn"
+          style="background: rgba(255,255,240,0.1); color:white; border-color:#e2cbb0; margin-top: 16px;">
+          <i class="fas fa-map-marker-alt"></i> Lihat Lokasi Acara
+        </button>
+
+        <div class="countdown-wrapper" id="countdownContainer"></div>
+      </div>
+    </div>
+
+    <!-- Cerita Cinta Kami -->
+    <div class="container section">
+      <div class="story-grid">
+        <div class="story-card">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Bidenatrial', serif;">Perjalanan Kami</h3>
+          <img class="parallax-move" data-speed="0.03" src="https://i.imgur.com/wfl9Rat.jpg"
+            alt="Kebersamaan Zaenul & Ardila"
+            style="width:100%; border-radius: 28px; margin-bottom: 20px; object-fit: cover;">
+          <p>Dari pertama bertemu hingga komitmen seumur hidup, setiap langkah kami dibimbing oleh cinta dan rasa
+            hormat. Kami mengundang Anda untuk merayakan ikatan suci ini.</p>
+        </div>
+        <div class="story-card">
+          <p>Melalui tawa, tantangan, dan pertumbuhan, ikatan kami semakin kuat. Kami menantikan awal babak baru ini
+            dikelilingi oleh orang-orang yang kami sayangi.</p>
+          <img class="parallax-move" data-speed="-0.01" src="https://i.imgur.com/4QoK0pE.jpg"
+            alt="Momen bersama Zaenul dan Ardila"
+            style="width:100%; border-radius: 28px; margin: 20px 0; object-fit: cover;">
+          <div class="verse" style="text-align:center; border-left:0;">#ZaenulArdilaSelamanya</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Trailer -->
+    
+
+    <!-- Galeri Foto Slider -->
+    <div class="container section">
+      <div class="slide-bride">
+        <div><img src="https://i.imgur.com/wfl9Rat.jpg" alt="Galeri 1"></div>
+        <div><img src="https://i.imgur.com/4QoK0pE.jpg" alt="Galeri 2"></div>
+        <div><img src="https://i.imgur.com/mKYYseA.jpg" alt="Galeri 3"></div>
+        <div><img src="https://i.imgur.com/dzNxrjz.jpg" alt="Galeri 4"></div>
+      </div>
+    </div>
+
+    <!-- Galeri Thumbnail Lightgallery -->
+    <div class="container section">
+      <div id="lightgallerySet" style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://i.imgur.com/wfl9Rat.jpg"><img src="https://i.imgur.com/wfl9Rat.jpg" width="120"
+            style="border-radius: 20px; object-fit: cover;"></a>
+        <a href="https://i.imgur.com/4QoK0pE.jpg"><img src="https://i.imgur.com/4QoK0pE.jpg" width="120"
+            style="border-radius: 20px; object-fit: cover;"></a>
+        <a href="https://i.imgur.com/mKYYseA.jpg"><img src="https://i.imgur.com/mKYYseA.jpg" width="120"
+            style="border-radius: 20px; object-fit: cover;"></a>
+      </div>
+    </div>
+
+    <!-- Buku Tamu dan Ucapan -->
+    <div class="container section">
+      <div class="guestbook-wrapper">
+        <div class="guestbook-form">
+          <h3 style="font-size: 1.6rem; margin-bottom: 20px; font-family: 'Bidenatrial', serif;">Kirim Doa & Ucapan</h3>
+          <form id="wishForm">
+            <input type="text" id="guestName" placeholder="Nama Lengkap" required>
+            <textarea id="guestMessage" rows="4" placeholder="Tulis doa dan ucapan terbaik Anda..." required></textarea>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Ucapan</button>
+          </form>
+        </div>
+        <div class="guestbook-messages">
+          <h3 style="font-size: 1.6rem; margin-bottom: 20px; font-family: 'Bidenatrial', serif;">Doa & Ucapan</h3>
+          <div class="message-list" id="messageList">
+            <div class="chat-item"><span class="chat-name">Keluarga Besar</span>
+              <p>Semoga pernikahan ini diberkahi dan menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+            </div>
+            <div class="chat-item"><span class="chat-name">Sahabat</span>
+              <p>Selamat menempuh hidup baru! Semoga bahagia selalu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Penutup dengan efek parallax -->
+    <div class="hero" style="height: 70vh; background-attachment: fixed; margin-top: 30px;">
+      <div class="hero-card" style="background: rgba(30, 25, 20, 0.78); color: #fdf5ea;">
+        <div class="subtitle" style="color: #e2cfb3;">Dengan Hormat</div>
+        <div class="couple-name closing-name"
+          style="font-family: 'Bidenatrial', 'Bodoni Moda', serif !important;">Zaenul & Ardila</div>
+        <p>Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan kebahagiaan tersendiri bagi kami.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Pernikahan Zaenul & Ardila | 13 Mei 2026</p>
+    <p style="margin-top: 8px; font-size: 0.75rem;">Undangan Digital Elegan</p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.0.2/wow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.2.0-beta.0/lightgallery.min.js"></script>
+  <script>
+    (function () {
+      // AUDIO AUTO PLAY - Ed Sheeran Perfect
+      const audio = document.getElementById('weddingAudio');
+      const musicToggle = document.getElementById('musicToggle');
+      const musicIcon = document.getElementById('musicIcon');
+      const musicStatus = document.getElementById('musicStatus');
+      let isPlaying = false;
+
+      function startAudio() {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicIcon.className = 'fas fa-music';
+          musicStatus.innerText = 'Perfect - Ed Sheeran';
+        }).catch(err => {
+          isPlaying = false;
+          musicIcon.className = 'fas fa-volume-mute';
+          musicStatus.innerText = 'Klik untuk Putar';
+        });
+      }
+
+      const openBtn = document.getElementById('openInvitationBtn');
+      const hero = document.getElementById('heroSection');
+      const mainInv = document.getElementById('mainInvitation');
+      let audioStarted = false;
+
+      function enableAudio() {
+        if (!audioStarted) {
+          startAudio();
+          audioStarted = true;
+        }
+      }
+
+      openBtn.addEventListener('click', () => {
+        hero.style.display = 'none';
+        mainInv.style.display = 'block';
+        document.body.style.overflowY = 'auto';
+        setTimeout(() => {
+          window.scrollTo({ top: document.querySelector('.container')?.offsetTop || 0, behavior: 'smooth' });
+        }, 90);
+        new WOW().init();
+        enableAudio();
+      });
+
+      musicToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+          musicIcon.className = 'fas fa-volume-mute';
+          musicStatus.innerText = 'Musik Dijeda';
+        } else {
+          audio.play().then(() => {
+            isPlaying = true;
+            musicIcon.className = 'fas fa-music';
+            musicStatus.innerText = 'Perfect - Ed Sheeran';
+          }).catch(() => {
+            musicStatus.innerText = 'Klik untuk Putar';
+          });
+        }
+      });
+
+      // Parallax effect
+      function updateParallax() {
+        const scrollY = window.pageYOffset;
+        document.querySelectorAll('.parallax-move').forEach(el => {
+          let speed = parseFloat(el.getAttribute('data-speed'));
+          if (isNaN(speed)) speed = 0.02;
+          const yShift = scrollY * speed * 0.45;
+          if (Math.abs(yShift) < 100) el.style.transform = `translateY(${yShift}px)`;
+        });
+      }
+      window.addEventListener('scroll', () => requestAnimationFrame(updateParallax));
+      window.addEventListener('load', updateParallax);
+
+      // Countdown Timer
+      const weddingDate = new Date("May 13, 2026 08:00:00").getTime();
+      const countdownDiv = document.getElementById('countdownContainer');
+      function updateTimer() {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+        if (diff <= 0) {
+          countdownDiv.innerHTML = `<div class="countdown-item"><div class="countdown-number">Hari H</div><div>Pernikahan</div></div>`;
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (86400000)) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        countdownDiv.innerHTML = `
+          <div class="countdown-item"><div class="countdown-number">${days}</div><div>Hari</div></div>
+          <div class="countdown-item"><div class="countdown-number">${hours}</div><div>Jam</div></div>
+          <div class="countdown-item"><div class="countdown-number">${mins}</div><div>Menit</div></div>
+          <div class="countdown-item"><div class="countdown-number">${secs}</div><div>Detik</div></div>
+        `;
+      }
+      setInterval(updateTimer, 1000);
+      updateTimer();
+
+      // Slick Carousel
+      $('.slide-bride').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2400,
+        responsive: [
+          { breakpoint: 992, settings: { slidesToShow: 2 } },
+          { breakpoint: 576, settings: { slidesToShow: 1 } }
+        ]
+      });
+
+      // LightGallery
+      if (document.getElementById('lightgallerySet')) {
+        lightGallery(document.getElementById('lightgallerySet'), { thumbnail: true, speed: 400 });
+      }
+
+      // Buku Tamu
+      const form = document.getElementById('wishForm');
+      const nameInput = document.getElementById('guestName');
+      const msgInput = document.getElementById('guestMessage');
+      const messageContainer = document.getElementById('messageList');
+
+      function addMessage(name, message) {
+        const newMsg = document.createElement('div');
+        newMsg.className = 'chat-item';
+        newMsg.innerHTML = `<span class="chat-name">${escapeHtml(name)}</span><p>${escapeHtml(message)}</p>`;
+        messageContainer.appendChild(newMsg);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m] || m));
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let name = nameInput.value.trim();
+        let msg = msgInput.value.trim();
+        if (name === "") name = "Tamu Undangan";
+        if (msg === "") { alert("Silakan tulis doa dan ucapan Anda."); return; }
+        addMessage(name, msg);
+        nameInput.value = "";
+        msgInput.value = "";
+      });
+
+      // ========== PERBAIKAN TOMBOL LOKASI ==========
+      // Tombol langsung membuka Google Maps sesuai link yang diberikan
+      const locationBtn = document.getElementById('locationBtn');
+      if (locationBtn) {
+        locationBtn.addEventListener('click', () => {
+          window.open('https://maps.app.goo.gl/oJT1Y3Vx5gQt5p3k9', '_blank');
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
